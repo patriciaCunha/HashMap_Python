@@ -92,6 +92,7 @@ class GerarUser:
                 else:            
                     posicao = randint(0, len(self.consoante) - 1)
                     self.name = self.name + self.consoante[posicao]
+                    
         return self.name
         
 
@@ -128,7 +129,7 @@ if __name__ == "__main__":
                 user = GerarUser()
                 usuario = user.gerarUser()
                 h.put(usuario.name, usuario)
-                
+                print(user.name)
             print("Parabéns! Dados inseridos com sucesso!")    
         
         elif opcao == "2":
