@@ -41,6 +41,19 @@ class HashMap:
             if user is not None:
                 for users in user:
                     print ("Nome: "+users.name+", Altura: " + str(users.height)+ "\n")
+    
+    def count(self):
+        count = 0
+        posicao = 1
+        for size in self.map:
+            if size is not None:
+                sizeEmCada = 0
+                for cadaSize in size:
+                    sizeEmCada = sizeEmCada + 1
+                    count = count + 1
+                print("No " + str(posicao) + ", possui " +  str(sizeEmCada))
+            posicao = posicao + 1
+        print("Tem no total " + str(count))
 
 class User:
     def __init__(self, name, height):
@@ -104,7 +117,8 @@ if __name__ == "__main__":
         print ("1 - Inserir Usuário\n")
         print ("2 - Pesquisar Usuário\n")
         print ("3 - Buscar Usuário\n")
-        print ("4 - Sair\n")
+        print ("4 - Quantidade no hash\n")
+        print ("5 - Sair\n")
 
         opcao = input("Digite a sua Opção:\n")
 
@@ -114,7 +128,7 @@ if __name__ == "__main__":
                 user = GerarUser()
                 usuario = user.gerarUser()
                 h.put(usuario.name, usuario)
-                print(usuario.name)
+                
             print("Parabéns! Dados inseridos com sucesso!")    
         
         elif opcao == "2":
@@ -134,5 +148,8 @@ if __name__ == "__main__":
                 print("Registro não encontrado")    
 
         elif opcao == "4":
+            h.count()   
+
+        elif opcao == "5":
             print("Tchau! Até a próxima!:D Glória à Deuxxx")
             break;
